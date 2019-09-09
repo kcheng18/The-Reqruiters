@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feedback</title>
+</head>
+<script>
+	function getIndex(select) {
+		if (select.value == "other"){	
+			document.getElementById("demo").innerHTML = "Other:";
+			document.getElementById("otherText").type = "text";
+		}
+		else{
+			document.getElementById("demo").innerHTML = "";
+			document.getElementById("otherText").type = "hidden";
+		}		
+	}
+	/*
+	function hide(){
+		var earrings = document.getElementById('restOption');
+		earrings.style.visibility = 'hidden';
+	}
+
+	function show(){
+		var earrings = document.getElementById('restOption');
+		earrings.style.visibility = 'visible';
+	}
+	
+	function restSet(){
+		if(document.getElementById("typeOption").value == "rest"){
+			show();
+		}
+		else
+			hide();
+	}
+	*/
+	
+</script>
+<body>
+<h1>Feedback</h1>
+
+<form action="feedback_view_page.html">
+  Name:
+  <input type="text" name="fullname">
+  <br>
+  Type:
+  <select id="typeOption" onchange="getIndex(this)">
+  	<option value="none"></option>
+  	<option value="rest">Restaurant</option>
+  	<option value="event">Event</option>
+  	<option value="other">Other</option>
+  </select>
+  <br>
+  If Restaurant, which one
+  <select id="restOption" onchange="getIndex(this)">
+  	<option value="none"></option>
+  	<option value="ngm">New Gold Mountain Restaurant</option>
+  	<option value="dpat">Dudley's Pizza and Tavern</option>
+  	<option value="vt">Voodoo Taco</option>
+  	<option value="mto">Mai Thai Omaha</option>
+  	<option value="gp">Godfather's Pizza</option>
+  	<option value="psag">Ponzu Sushi and Grill</option>
+  	<option value="other">Other</option>
+  </select>
+  <div id="demo"></div><input type="hidden" id="otherText" name="other">
+  <br>
+  Description:
+  <br>
+  <textarea rows="4" cols="50"></textarea>
+  <br>
+  Rating: 
+  <input type="radio" name="rate1" value="rate1">
+  <input type="radio" name="rate2" value="rate2">
+  <input type="radio" name="rate3" value="rate3">
+  <input type="radio" name="rate4" value="rate4">
+  <input type="radio" name="rate5" value="rate5">
+  <br>
+  <input type="submit" value="Submit" style="float: right;">
+</form> 
+
+
+</body>
+</html>
