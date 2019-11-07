@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Bootstrap CDN for online application-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>AV Navigator - Sign Up</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Linked CSS and javaScript files -->
+    <link rel="stylesheet" type="text/css" href="css/pageOutlook.css" />
+
+
+    <!-- Inline CSS -->
+    <style>
+        .carousel-inner img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<script>
+	function checklogin(){
+		var id = sessionStorage.getItem("userid");
+		if (id != undefined){
+			alert("You've already login." + id)
+			location.replace("./home.html")
+		}
+	}
+	checklogin();
+	function signup(){
+		var pd = document.getElementById("pwd").value;
+		var cpd = document.getElementById("cpwd").value;
+		var id = document.getElementById("userid").value;
+		var name = document.getElementById("userid").value;
+		if (pd != "" && cpd != "" && id != "" && name != ""){
+			if (pd == cpd)
+				location.replace("./login.html")
+			else
+				alert("Password Not Match. Please try again.")
+		}
+		else
+			alert("Invalid Input. Please try again.")
+	}
+</script> 
+
+<body>
+
+    <!-- Header Start-->
+    <div class="container-fluid" id="header">
+        <div>
+            <div style="padding-top: 20px; text-align: center;">
+                <h2>AV Navigator</h2>
+            </div>
+        </div>
+    </div>
+    <div id="header" style="background-color: rgb(255, 0, 0);height: 5px"></div>
+    <!-- Header End-->
+    <div style="height: 100px;"></div>
+    <!-- Body Start-->
+    <div style="height: 300px;">
+	    <div class="container-fluid" id="mbody">
+	    	<div id="demo"></div>
+			  <table align="center">
+			  	<tr>
+		          <td align="right">Name:</td>
+		          <td align="left"><input type="text"
+		              id="name"/></td>
+		        </tr>
+			  	<tr>
+		          <td align="right">User ID:</td>
+		          <td align="left"><input type="text"
+		              id="userid"/></td>
+		        </tr>
+		        <tr>
+		          <td align="right">Password:</td>
+		          <td align="left"><input type="password"
+		              id="pwd"/></td>
+		        </tr>
+		        <tr>
+		          <td align="right">Confirm Password:</td>
+		          <td align="left"><input type="password"
+		              id="cpwd"/></td>
+		        </tr>
+		        <td></td>  
+		        <td style="float:right;"><a href="login.html">Login</a> <button onclick="signup()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Sign Up</button></td>
+		      </table>
+	    </div>
+    </div>
+    <!-- Body End-->
+
+
+    <!-- Footer Start-->
+    <div id="footer">
+        <h6>
+            <b>University of Nebraska at Omaha. CSCI 8700 Project. Team: The Reqruiters</b>
+        </h6>
+    </div>
+    <!-- Footer End-->
+
+</body>
+
+</html>
