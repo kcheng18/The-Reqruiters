@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Bootstrap CDN for online application-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>AV Navigator</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Linked CSS and javaScript files -->
+    <link rel="stylesheet" type="text/css" href="css/pageOutlook.css" />
+
+
+    <!-- Inline CSS -->
+    <style>
+
+ #Restaurants{
+    position: relative;
+    text-align: center;
+width: 100%;
+ }  
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+li.text
+{
+        background-color: #7BCBD1;
+        margin: .4em 0;
+        text-align: center;
+}
+.list-group{
+    background-color:white;
+    max-height: 500px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch; 
+}
+#header1{
+    background-image: url('img/banner-bg.jpg');
+    text-align: center;
+    color:white ;
+}
+.jumbotron {  background-size: cover; }
+</style>
+
+
+</head>
+
+<body>
+
+    <!-- Header Start-->
+    <div class="container-fluid" id="header">
+        <div>
+            <div style="padding-top: 20px; text-align: center;">
+                <h2>AV Navigator</h2>
+            </div>
+        </div>
+    </div>
+    <div id="header" style="background-color: rgb(255, 0, 0);height: 5px"></div>
+    <!-- Header End-->
+
+    <!-- Body Start-->
+    <div id="mbody">
+    <!-- Jumbotron Start-->
+      <div class="jumbotron" id="header1">
+        <h3>Places to eat in Aksarben</h3>
+    </div>    
+    <!-- Jumbotron end-->
+<!-- list of retaurants overflow tab start-->
+
+<div class="col-md-4 resturants panel-body" id="list">
+            <ul class="list-group">
+                <li class="list-group-item text"><a>Legends</a></li>
+                <li class="list-group-item text"><a>Mai Thai Omaha</a></li>
+                <li class="list-group-item text"><a>Wingstop</a></li>
+                <li class="list-group-item text"><a>Vodoo Taco</a></li>
+                 <li class="list-group-item text"><a>Ponzu Sushi and Grill</a></li>
+                  <li class="list-group-item text"><a>JuiceStop</a></li>
+                  <li class="list-group-item text"><a>Herbe Sainte</a></li>
+                  <li class="list-group-item text"><a>Vitality Bowls</a></li>
+                  <li class="list-group-item text"><a>Godfathers Pizza</a></li>
+                  <li class="list-group-item text"><a>Jones Bros Cupcakes</a></li>
+             </ul>
+</div>
+<!-- list of retaurants overflow tab end-->
+
+    <!-- Body End-->
+</div>
+
+    <!-- Footer Start-->
+       <div id="footer">
+        <h6>
+            <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, error praesentium a facilis commodi, at placeat, perspiciatis beatae neque facere veritatis iure nesciunt aliquam et quam excepturi iste atque labore.</b>
+        </h6>
+    </div>
+
+    <!-- Footer End-->
+
+</body>
+
+</html>
