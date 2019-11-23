@@ -19,16 +19,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Linked CSS and javaScript files -->
-    <link rel="stylesheet" type="text/css" href="css/pageOutlook.css" />
-
+    <link rel="stylesheet" type="text/css" href="../css/pageOutlook.css" />
+    <link rel="stylesheet" type="text/css" href="../css/restaurants.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Inline CSS -->
+
+    <script src="../js/app.js"></script>
     <style>
 
  #Restaurants{
     position: relative;
     text-align: center;
-width: 100%;
+    width: 100%;
  }  
 .centered {
   position: absolute;
@@ -39,9 +42,9 @@ width: 100%;
 
 li.text
 {
-        background-color: #7BCBD1;
-        margin: .4em 0;
-        text-align: center;
+    background-color: #7BCBD1;
+    margin: .4em 0;
+    text-align: center;
 }
 .list-group{
     background-color:white;
@@ -50,7 +53,7 @@ li.text
     -webkit-overflow-scrolling: touch; 
 }
 #header1{
-    background-image: url('img/banner-bg.jpg');
+    background-image: url('../img/banner-bg.jpg');
     text-align: center;
     color:white ;
 }
@@ -59,18 +62,40 @@ li.text
 
 
 </head>
-
 <body>
-
-    <!-- Header Start-->
     <div class="container-fluid" id="header">
-        <div>
-            <div style="padding-top: 20px; text-align: center;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="../html/home.html">
                 <h2>AV Navigator</h2>
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/parking.html">Parking</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </div>
-    <div id="header" style="background-color: rgb(255, 0, 0);height: 5px"></div>
+    <br>
+    <div id="redline" style="background-color: rgb(255, 0, 0);height: 5px"></div>
     <!-- Header End-->
 
     <!-- Body Start-->
@@ -81,12 +106,12 @@ li.text
     </div>    
     <!-- Jumbotron end-->
 <!-- list of retaurants overflow tab start-->
-
+<div class="row">
 <div class="col-md-4 resturants panel-body" id="list">
             <ul class="list-group">
                 <li class="list-group-item text"><a>Legends</a></li>
                 <li class="list-group-item text"><a>Mai Thai Omaha</a></li>
-                <li class="list-group-item text"><a>Wingstop</a></li>
+                <li class="list-group-item text"><a>Le Peep - Aksarben Pointe</a></li>
                 <li class="list-group-item text"><a>Vodoo Taco</a></li>
                  <li class="list-group-item text"><a>Ponzu Sushi and Grill</a></li>
                   <li class="list-group-item text"><a>JuiceStop</a></li>
@@ -99,17 +124,221 @@ li.text
 <!-- list of retaurants overflow tab end-->
 
     <!-- Body End-->
+<div class="col-md-8" id="map">
+        </div>
+</div>
+            
+        <!-- The Modal Start for Legends Restaurant-->
+
+        <div class="modal" id="myModal_Legends">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100 text-center">Legends</h4>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row">
+                                <div class="col-md-3"> <!-- required for floating -->
+                        <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
+                                    <li class=" active"><a href="#home-v" data-toggle="tab">Description</a></li>
+                                    <li><a href="#profile-v" data-toggle="tab">Location</a></li>
+                                    <li><a href="#settings-v" data-toggle="tab">Ratings</a></li>
+                                    <li><a href="#availablity-v" data-toggle="tab">Availability</a></li>
+                                    <li><a href="#Timings-v" data-toggle="tab">Timings</a></li>
+                                    <li><a href="#messages-v" data-toggle="tab">Menu</a></li>
+
+                                </ul>
+                                </div>
+                                <div class="col-md-9">
+                                <!-- Tab panes -->
+                                     <div class="tab-content">
+                                        <div class="tab-pane active" id="home-v">Sit back and enjoy Omaha's best patio, or just relax in good company in a comfortable environment. Serving lunch, dinner, and late night fare, Legend's Patio Grill and Bar has something for everyone.
+
+                                        </div>
+                                        <div class="tab-pane" id="profile-v">6920 Pacific St suite 100, Omaha, NE 68106</br><button onclick=" window.open('https://goo.gl/maps/gDothcNkHcJ4ZUsP8', '_blank'); return false;">Get Direction</button></div>
+                                        <div class="tab-pane" id="messages-v">Menu
+                                                                                    </div>
+                                        <div class="tab-pane" id="settings-v">
+                                            <div>This restaurant is a widely popular restaurant.The ratings are:</div>
+                                            <div>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star"></span>
+                                                  <span class="fa fa-star"></span>
+                                            </div>
+                                          
+                                        </div>
+                                        <div class="tab-pane" id="availablity-v">The current seat availablity at the restaurant is<div id="legends"></div> </div>
+                                        <div class="tab-pane" id="Timings-v">
+                                            <p>Mon-Sun:11:00am to 2:00am</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                   </div>
+                 </div>
+             </div>               
+
+         <div class="modal" id="myModal_MaiThai">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header text-center">
+                                <h4 class="modal-title w-100 text-center" >Mai Thai Omaha</h1>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row">
+                                <div class="col-md-3"> <!-- required for floating -->
+                        <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
+                                    <li class=" active"><a href="#home-v_m" data-toggle="tab">Description</a></li>
+                                    <li><a href="#profile-v_m" data-toggle="tab">Location</a></li>
+                                    <li><a href="#settings-v_m" data-toggle="tab">Ratings</a></li>
+                                    <li><a href="#availablity-v_m" data-toggle="tab">Availability</a></li>
+                                    <li><a href="#Timings-v_m" data-toggle="tab">Timings</a></li>
+                                    <li><a href="#messages-v_m" data-toggle="tab">Menu</a></li>
+
+                                </ul>
+                                </div>
+                                <div class="col-md-9">
+                                <!-- Tab panes -->
+                                     <div class="tab-content">
+                                        <div class="tab-pane active" id="home-v_m">Popular outpost serving an array of elevated Thai dishes & tropical cocktails in a modern interior.
+                                        </div>
+
+                                        <div class="tab-pane" id="profile-v_m">
+                                        <div> 2279 S 67th St B, Omaha, NE 68106</div>
+                                        <div>
+                                        <button onclick=" window.open('https://goo.gl/maps/BcGatTH12eUxnhA58', '_blank'); return false;">Get Direction</button></div>
+                                        </div>
+                                        <div class="tab-pane" id="messages-v_m">Menu
+                                                                                    
+                                        </div>
+                                        <div class="tab-pane" id="settings-v_m">
+                                            <div>This restaurant is a widely popular restaurant.The ratings are:</div>
+                                            <div>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star"></span>
+                                                  <span class="fa fa-star"></span>
+                                            </div>
+                                         
+                                        </div>
+                                        <div class="tab-pane" id="availablity-v_m">The current seat availablity at the restaurant is<div id="maithai"></div> </div>
+                                        <div class="tab-pane" id="Timings-v_m">
+                                            <p>Mon-Thurs:11:00am to 9:00pm</p>
+                                             <p>Fri-Sun:11:00am -10:00pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                   </div>
+                 </div>
+             </div> 
+          <div class="modal" id="myModal_Lepep">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header text-center">
+                                <h4 class="modal-title w-100 text-center" >Le Peep - Aksarben Pointe</h1>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row">
+                                <div class="col-md-3"> <!-- required for floating -->
+                        <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
+                                    <li class=" active"><a href="#home-v_p" data-toggle="tab">Description</a></li>
+                                    <li><a href="#profile-v_p" data-toggle="tab">Location</a></li>
+                                    <li><a href="#settings-v_p" data-toggle="tab">Ratings</a></li>
+                                    <li><a href="#availablity-v_p" data-toggle="tab">Availability</a></li>
+                                    <li><a href="#Timings-v_p" data-toggle="tab">Timings</a></li>
+                                    <li><a href="#messages-v_p" data-toggle="tab">Menu</a></li>
+
+                                </ul>
+                                </div>
+                                <div class="col-md-9">
+                                <!-- Tab panes -->
+                                     <div class="tab-content">
+                                        <div class="tab-pane active" id="home-v_p">Casual breakfast & lunch chain with a long menu of straightforward American fare & coffee drinks.
+                                        </div>
+
+                                        <div class="tab-pane" id="profile-v_p">
+                                        <div> 6920 Pacific St, Omaha, NE 68106</div>
+                                        <div>
+                                        <button onclick=" window.open('https://goo.gl/maps/n4fLVaLfjgUNKQLEA', '_blank'); return false;">Get Direction</button></div>
+                                        </div>
+                                        <div class="tab-pane" id="messages-v_p">Menu
+                                                                                    
+                                        </div>
+                                        <div class="tab-pane" id="settings-v_p">
+                                            <div>This restaurant is a widely popular restaurant.The ratings are:</div>
+                                            <div>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star"></span>
+                                            </div>
+                                         
+                                        </div>
+                                        <div class="tab-pane" id="availablity-v_p">The current seat availablity at the restaurant is<div id="lepep"></div> </div>
+                                        <div class="tab-pane" id="Timings-v_p">
+                                            <p>Mon-Thurs:11:00am to 10:00pm</p>
+                                             <p>Fri-Sun:11:00am -8:00pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                   </div>
+                 </div>
+             </div>                
+                            
+    
+        <!--Modal End-->
+             
+                      
+    <!-- Body End-->
+
 </div>
 
     <!-- Footer Start-->
        <div id="footer">
         <h6>
-            <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, error praesentium a facilis commodi, at placeat, perspiciatis beatae neque facere veritatis iure nesciunt aliquam et quam excepturi iste atque labore.</b>
+            <b>University of Nebraska at Omaha. CSCI 8700 Project. Team: The Reqruiters</b>
         </h6>
     </div>
 
     <!-- Footer End-->
-
+    <!-- Calling Google Maps API-->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHgljo-kiYmY52Cv3tOG3NEhFqjS8Zzhw&callback=initMap" onerror="googleError()" async defer></script>
 </body>
 
 </html>
