@@ -17,9 +17,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    <!-- Linked CSS and javaScript files -->
-    <link rel="stylesheet" type="text/css" href="css/pageOutlook.css" />
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 
 
     <!-- Inline CSS -->
@@ -29,75 +32,72 @@
         }
     </style>
 </head>
-
 <script>
-	function checklogin(){
-		var id = sessionStorage.getItem("userid");
-		if (id != undefined){
-			alert("You've already login." + id)
-			location.replace("./home.html")
-		}
-	}
-	checklogin();
-	function login(){
-		var pd = document.getElementById("pwd").value;
-		var id = document.getElementById("userid").value;
-		if (id != ""){
-			if (pd == "Reqruiters1234"){
-				sessionStorage.setItem("userid", id);
-				location.replace("./template.html")
-			}
-			else
-				alert("Invalid Password. Please try again.")
-		}
-		else
-			alert("Invalid ID. Please try again.")
-	}
-</script> 
+    function checklogin(){
+        var id = sessionStorage.getItem("userid");
+        if (id != undefined){
+            alert("You've already login." + id)
+            location.replace("./home.html")
+        }
+    }
+    checklogin();
+    function login(){
+        var pd = document.getElementById("pwd").value;
+        var id = document.getElementById("userid").value;
+        if (id != ""){
+            if (pd == "Reqruiters1234"){
+                sessionStorage.setItem("userid", id);
+                location.replace("./template.html")
+            }
+            else
+                alert("Invalid Password. Please try again.")
+        }
+        else
+            alert("Invalid ID. Please try again.")
+    }
+</script>
 
-<body>
 
-    <!-- Header Start-->
-    <div class="container-fluid" id="header">
-        <div>
-            <div style="padding-top: 20px; text-align: center;">
-                <h2>AV Navigator</h2>
+    <!-- Header End-->
+    <body>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+             
             </div>
+            <div class="card-body">
+                <form>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="username" id="userid">
+                        
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password" id="pwd">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn" onclick="login()">
+                    </div>
+                </form>
+            </div>
+           
         </div>
     </div>
-    <div id="header" style="background-color: rgb(255, 0, 0);height: 5px"></div>
-    <!-- Header End-->
 
-    <!-- Body Start-->
-    <div style="height: 100px;"></div>
-    <div style="height: 300px;">
-	    <div class="container-fluid" id="mbody">
-	    	<div id="demo"></div>
-			  <table align="center">
-			  	<tr>
-		          <td align="right">User ID:</td>
-		          <td align="left"><input type="text"
-		              id="userid"/></td>
-		        </tr>
-		        <tr>
-		          <td align="right">Password:</td>
-		          <td align="left"><input type="password"
-		              id="pwd"/></td>
-		        </tr>
-		        <td></td>  
-		        <td style="float:right;"><a href="signup.html">Sign Up</a> <button onclick="login()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Login</button></td>
-		      </table>
-	    </div>
-	 </div>
+
     <!-- Body End-->
 
 
     <!-- Footer Start-->
-    <div id="footer">
-        <h6>
-            <b>University of Nebraska at Omaha. CSCI 8700 Project. Team: The Reqruiters</b>
-        </h6>
-    </div>
+    
     <!-- Footer End-->
 
 </body>

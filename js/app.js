@@ -14,13 +14,13 @@ function initMap() {
   var x =Math.floor(Math.random() * 10) + 1;
   document.getElementById("legends").innerHTML =Math.floor(Math.random() * 10) + 1 ;
   document.getElementById("maithai").innerHTML =Math.floor(Math.random() * 10) + 1 ;
-  document.getElementById("lepep").innerHTML =Math.floor(Math.random() * 10) + 1 ;
+  document.getElementById("lepepp").innerHTML =Math.floor(Math.random() * 10) + 1 ;
 
 }
 //List of restaurants with their latitude and longitude
- var restaurants=[['Legends',41.249152,-96.021229, 0],
+ var restaurants=[['Legends',41.249180,-96.02100, 0],
         ['Mai Thai Omaha',41.229737, -96.023418, 1],
-        ['Le Peep - Aksarben Pointe',41.249150,-96.021230, 2],
+        ['Le Peep - Aksarben Pointe',41.249150,-96.021233, 2],
         ['VodooTaco',41.237,-96.01389, 3],
         ['Ponzu Sushi and Grill',41.240117,-96.015315, 4],
         ['JuiceStop',41.239163,-96.014410, 5],

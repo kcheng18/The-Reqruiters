@@ -19,51 +19,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Linked CSS and javaScript files -->
-    <link rel="stylesheet" type="text/css" href="../css/pageOutlook.css" />
+
     <link rel="stylesheet" type="text/css" href="../css/restaurants.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Inline CSS -->
 
     <script src="../js/app.js"></script>
-    <style>
-
- #Restaurants{
-    position: relative;
-    text-align: center;
-    width: 100%;
- }  
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-li.text
-{
-    background-color: #7BCBD1;
-    margin: .4em 0;
-    text-align: center;
-}
-.list-group{
-    background-color:white;
-    max-height: 500px;
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch; 
-}
-#header1{
-    background-image: url('../img/banner-bg.jpg');
-    text-align: center;
-    color:white ;
-}
-.jumbotron {  background-size: cover; }
-</style>
-
-
 </head>
 <body>
-    <div class="container-fluid" id="header">
+ <div class="container-fluid" id="header">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <!-- Brand/logo -->
             <a class="navbar-brand" href="../html/home.html">
@@ -98,6 +63,8 @@ li.text
     <div id="redline" style="background-color: rgb(255, 0, 0);height: 5px"></div>
     <!-- Header End-->
 
+    <!-- Header End-->
+
     <!-- Body Start-->
     <div id="mbody">
     <!-- Jumbotron Start-->
@@ -106,7 +73,9 @@ li.text
     </div>    
     <!-- Jumbotron end-->
 <!-- list of retaurants overflow tab start-->
+<div class="container-fluid">
 <div class="row">
+
 <div class="col-md-4 resturants panel-body" id="list">
             <ul class="list-group">
                 <li class="list-group-item text"><a>Legends</a></li>
@@ -127,13 +96,13 @@ li.text
 <div class="col-md-8" id="map">
         </div>
 </div>
+</div>
             
-        <!-- The Modal Start for Legends Restaurant-->
 
         <div class="modal" id="myModal_Legends">
                     <div class="modal-dialog">
                         <div class="modal-content">
-
+ 
                             <!-- Modal Header -->
                             <div class="modal-header">
                                 <h4 class="modal-title w-100 text-center">Legends</h4>
@@ -142,53 +111,120 @@ li.text
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <div class="row">
-                                <div class="col-md-3"> <!-- required for floating -->
-                        <!-- Nav tabs -->
-                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
-                                    <li class=" active"><a href="#home-v" data-toggle="tab">Description</a></li>
-                                    <li><a href="#profile-v" data-toggle="tab">Location</a></li>
-                                    <li><a href="#settings-v" data-toggle="tab">Ratings</a></li>
-                                    <li><a href="#availablity-v" data-toggle="tab">Availability</a></li>
-                                    <li><a href="#Timings-v" data-toggle="tab">Timings</a></li>
-                                    <li><a href="#messages-v" data-toggle="tab">Menu</a></li>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3"> <!-- required for floating -->
+                     
+                                            <ul class="nav nav-pills nav-stacked flex-column" id="myTab" role="tablist">
+                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" >Description</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false">Location</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="ratings-tab" data-toggle="tab" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">Ratings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="availablity-tab" data-toggle="tab" href="#availablity" role="tab" aria-controls="availablity" aria-selected="false">Availability</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="timing-tab" data-toggle="tab" href="#timing" role="tab" aria-controls="timing" aria-selected="false">Timings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="false">Menu</a>
+                                                </li>
+                                            </ul>
 
-                                </ul>
-                                </div>
-                                <div class="col-md-9">
-                                <!-- Tab panes -->
-                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="home-v">Sit back and enjoy Omaha's best patio, or just relax in good company in a comfortable environment. Serving lunch, dinner, and late night fare, Legend's Patio Grill and Bar has something for everyone.
-
+                                                                        
                                         </div>
-                                        <div class="tab-pane" id="profile-v">6920 Pacific St suite 100, Omaha, NE 68106</br><button onclick=" window.open('https://goo.gl/maps/gDothcNkHcJ4ZUsP8', '_blank'); return false;">Get Direction</button></div>
-                                        <div class="tab-pane" id="messages-v">Menu
-                                                                                    </div>
-                                        <div class="tab-pane" id="settings-v">
-                                            <div>This restaurant is a widely popular restaurant.The ratings are:</div>
-                                            <div>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star"></span>
-                                                  <span class="fa fa-star"></span>
+                                        <div class="col-md-9" style="padding-left: 30px">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content" id="myTabContent">
+                                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                                        Sit back and enjoy Omaha's best patio, or just relax in good company in a comfortable environment. Serving lunch, dinner, and late night fare, Legend's Patio Grill and Bar has something for everyone.
+
+                                                    </div>
+                                           <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                                                6920 Pacific St suite 100, Omaha, NE 68106</br>
+                                                    <div class="centered_button">
+                                                        <button type="button" class="btn btn-success" onclick=" window.open('https://goo.gl/maps/gDothcNkHcJ4ZUsP8', '_blank'); return false;">Get Directions</button>
+                                                </div>
                                             </div>
-                                          
-                                        </div>
-                                        <div class="tab-pane" id="availablity-v">The current seat availablity at the restaurant is<div id="legends"></div> </div>
-                                        <div class="tab-pane" id="Timings-v">
-                                            <p>Mon-Sun:11:00am to 2:00am</p>
+                                            <div class="tab-pane fade" id="menu" role="tabpanel" aria-labelledby="menu-tab">
+                                              
+                                                <div class="container-fluid" >
+                                                <div class="scrollbar scrollbar-primary" id="anyClass"> 
+                                               
+                                                <div class="row">
+                                                    <div class="col-md-5">Jumbo Wings</div>
+                                                    <div class="col-md-3">5 $</div>
+                                                    <div class="col-md-4"><img src="../img/jumbo_wings.jpg" alt="Wings" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Quesadilla</div>
+                                                    <div class="col-md-3">7 $</div>
+                                                    <div class="col-md-4"><img src="../img/ques_di.jpg" alt="ques_di" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Taco Pizza</div>
+                                                    <div class="col-md-3">15 $</div>
+                                                    <div class="col-md-4"><img src="../img/taco_pizza.jpg" alt="taco_pizza" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Patty Melt</div>
+                                                    <div class="col-md-3">19 $</div>
+                                                    <div class="col-md-4"><img src="../img/patty_melt.jpg" alt="patty_melt" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Cobb Salad</div>
+                                                    <div class="col-md-3">5 $</div>
+                                                    <div class="col-md-4"><img src="../img/cobb_salad.jpeg" alt="cobb_salad" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Fish and Chips</div>
+                                                    <div class="col-md-3">5 $</div>
+                                                    <div class="col-md-4"><img src="../img/fish_chips.jpg" alt="fish_chips" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Nachos</div>
+                                                    <div class="col-md-3">12 $</div>
+                                                    <div class="col-md-4"><img src="../img/nachos.jpg" alt="fish_chips" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
+                                          <div class="tab-pane fade" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
+                                                    <div>This restaurant is a widely popular restaurant.The ratings are:
+                                                        </div>
+                                                   <div class="ratings_star">Ratings:
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                    </div>
+                                          
+                                            </div>
+
+                                            <div class="tab-pane fade" id="availablity" role="tabpanel" aria-labelledby="availablity-tab">
+                                                Current seat availability is :
+                                                <span id="legends">
+                                                </span>
+                                            </div>
+                                            <div class="tab-pane fade" id="timing" role="tabpanel" aria-labelledby="timing-tab">
+                                                <p>Mon-Sun:11:00am to 2:00am</p>
+                                            </div>
+                                     
                                 </div>
-                                
+                                       
                             </div>
-
-                        </div>
-
-                   </div>
+                            </div>
+                            </div>
+                         </div>
+                     </div>
                  </div>
-             </div>               
 
          <div class="modal" id="myModal_MaiThai">
                     <div class="modal-dialog">
@@ -196,56 +232,104 @@ li.text
 
                             <!-- Modal Header -->
                             <div class="modal-header text-center">
-                                <h4 class="modal-title w-100 text-center" >Mai Thai Omaha</h1>
+                                <h4 class="modal-title w-100 text-center" >Mai Thai Omaha</h4>
                                 <button type="button" class="close" data-dismiss="modal">×</button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <div class="row">
-                                <div class="col-md-3"> <!-- required for floating -->
-                        <!-- Nav tabs -->
-                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
-                                    <li class=" active"><a href="#home-v_m" data-toggle="tab">Description</a></li>
-                                    <li><a href="#profile-v_m" data-toggle="tab">Location</a></li>
-                                    <li><a href="#settings-v_m" data-toggle="tab">Ratings</a></li>
-                                    <li><a href="#availablity-v_m" data-toggle="tab">Availability</a></li>
-                                    <li><a href="#Timings-v_m" data-toggle="tab">Timings</a></li>
-                                    <li><a href="#messages-v_m" data-toggle="tab">Menu</a></li>
+                                    <div class="col-md-3 mb-3"> <!-- required for floating -->
+                     
+                                            <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="description_t-tab" data-toggle="tab" href="#description_t" >Description</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="location_t-tab" data-toggle="tab" href="#location_t" role="tab" aria-controls="location_t" aria-selected="false">Location</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="ratings_t-tab" data-toggle="tab" href="#ratings_t" role="tab" aria-controls="ratings_t" aria-selected="false">Ratings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="availablity_t-tab" data-toggle="tab" href="#availablity_t" role="tab" aria-controls="availablity_t" aria-selected="false">Availability</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="timing_t-tab" data-toggle="tab" href="#timing_t" role="tab" aria-controls="timing_t" aria-selected="false">Timings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="menu_t-tab" data-toggle="tab" href="#menu_t" role="tab" aria-controls="menu_t" aria-selected="false">Menu</a>
+                                                </li>
+                                            </ul>
 
-                                </ul>
-                                </div>
-                                <div class="col-md-9">
-                                <!-- Tab panes -->
-                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="home-v_m">Popular outpost serving an array of elevated Thai dishes & tropical cocktails in a modern interior.
+                                                                        
                                         </div>
-
-                                        <div class="tab-pane" id="profile-v_m">
-                                        <div> 2279 S 67th St B, Omaha, NE 68106</div>
-                                        <div>
-                                        <button onclick=" window.open('https://goo.gl/maps/BcGatTH12eUxnhA58', '_blank'); return false;">Get Direction</button></div>
+                                       <!-- Tab panes -->
+                       <div class="col-md-9" style="padding-left: 30px">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content" id="myTabContent">
+                                                    <div class="tab-pane fade show active" id="description_t" role="tabpanel" aria-labelledby="description_t-tab">Popular outpost serving an array of elevated Thai dishes & tropical cocktails in a modern interior.
                                         </div>
-                                        <div class="tab-pane" id="messages-v_m">Menu
+                                        <div class="tab-pane fade" id="location_t" role="tabpanel" aria-labelledby="location_t-tab">
+                                            <div> 2279 S 67th St B, Omaha, NE 68106</div>
+                                          
+                                                 <div class="centered_button">
+                                       <button type="button" class="btn btn-success"  onclick=" window.open('https://goo.gl/maps/BcGatTH12eUxnhA58', '_blank'); return false;">Get Direction</button></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="menu_t" role="tabpanel" aria-labelledby="menu_t-tab">
+                                                                                            <div class="container-fluid" >
+                                                <div class="scrollbar scrollbar-primary" id="anyClass"> 
+                                               
+                                                <div class="row">
+                                                    <div class="col-md-5">Garlic Noodle</div>
+                                                    <div class="col-md-3">9 $</div>
+                                                    <div class="col-md-4"><img src="../img/garlic_n.jpg" alt="garlic_noodles" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Chicken Satay</div>
+                                                    <div class="col-md-3">9 $</div>
+                                                    <div class="col-md-4"><img src="../img/chicken_satya.jpg" alt="Chicken_satay" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5"> Chicken Mango</div>
+                                                    <div class="col-md-3">10 $</div>
+                                                    <div class="col-md-4"><img src="../img/chicken_mango.jpg" alt="Chicken_mango" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                 
+                                                <div class="row">
+                                                    <div class="col-md-5"> Egg Rolls</div>
+                                                    <div class="col-md-3">6 $</div>
+                                                    <div class="col-md-4"><img src="../img/egg_roll.jpg" alt="Egg_rolls" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5"> Crab Rangoon</div>
+                                                    <div class="col-md-3">6 $</div>
+                                                    <div class="col-md-4"><img src="../img/crab_rangoon.jpg" alt="crab_rangoon" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
                                                                                     
                                         </div>
-                                        <div class="tab-pane" id="settings-v_m">
+                                        <div class="tab-pane fade" id="ratings_t" role="tabpanel" aria-labelledby="ratings_t-tab">
                                             <div>This restaurant is a widely popular restaurant.The ratings are:</div>
-                                            <div>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star"></span>
-                                                  <span class="fa fa-star"></span>
+                                            <div class="ratings_star">Ratings:
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star"></span>
+                                                    </div>
                                             </div>
-                                         
-                                        </div>
-                                        <div class="tab-pane" id="availablity-v_m">The current seat availablity at the restaurant is<div id="maithai"></div> </div>
-                                        <div class="tab-pane" id="Timings-v_m">
+                                  
+                                       <div class="tab-pane fade" id="availablity_t" role="tabpanel" aria-labelledby="availablity_t-tab">Current seat availability at the restaurant is  : <span id="maithai"></span> </div>
+                                        <div class="tab-pane fade" id="timing_t" role="tabpanel" aria-labelledby="timing_t-tab">
                                             <p>Mon-Thurs:11:00am to 9:00pm</p>
                                              <p>Fri-Sun:11:00am -10:00pm</p>
                                         </div>
                                     </div>
+
                                 </div>
                                 
                             </div>
@@ -253,90 +337,142 @@ li.text
                         </div>
 
                    </div>
-                 </div>
-             </div> 
-          <div class="modal" id="myModal_Lepep">
+          </div>
+      </div>
+    <div class="modal" id="myModal_Lepep">
                     <div class="modal-dialog">
                         <div class="modal-content">
-
+ 
                             <!-- Modal Header -->
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title w-100 text-center" >Le Peep - Aksarben Pointe</h1>
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100 text-center">Le Peep Aksarben Pointe</h4>
                                 <button type="button" class="close" data-dismiss="modal">×</button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <div class="row">
-                                <div class="col-md-3"> <!-- required for floating -->
-                        <!-- Nav tabs -->
-                                <ul class="nav nav-tabs nav-pills nav-stacked flex-column">
-                                    <li class=" active"><a href="#home-v_p" data-toggle="tab">Description</a></li>
-                                    <li><a href="#profile-v_p" data-toggle="tab">Location</a></li>
-                                    <li><a href="#settings-v_p" data-toggle="tab">Ratings</a></li>
-                                    <li><a href="#availablity-v_p" data-toggle="tab">Availability</a></li>
-                                    <li><a href="#Timings-v_p" data-toggle="tab">Timings</a></li>
-                                    <li><a href="#messages-v_p" data-toggle="tab">Menu</a></li>
-
-                                </ul>
-                                </div>
-                                <div class="col-md-9">
-                                <!-- Tab panes -->
-                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="home-v_p">Casual breakfast & lunch chain with a long menu of straightforward American fare & coffee drinks.
-                                        </div>
-
-                                        <div class="tab-pane" id="profile-v_p">
-                                        <div> 6920 Pacific St, Omaha, NE 68106</div>
-                                        <div>
-                                        <button onclick=" window.open('https://goo.gl/maps/n4fLVaLfjgUNKQLEA', '_blank'); return false;">Get Direction</button></div>
-                                        </div>
-                                        <div class="tab-pane" id="messages-v_p">Menu
-                                                                                    
-                                        </div>
-                                        <div class="tab-pane" id="settings-v_p">
-                                            <div>This restaurant is a widely popular restaurant.The ratings are:</div>
-                                            <div>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star checked"></span>
-                                                  <span class="fa fa-star"></span>
-                                            </div>
-                                         
-                                        </div>
-                                        <div class="tab-pane" id="availablity-v_p">The current seat availablity at the restaurant is<div id="lepep"></div> </div>
-                                        <div class="tab-pane" id="Timings-v_p">
-                                            <p>Mon-Thurs:11:00am to 10:00pm</p>
-                                             <p>Fri-Sun:11:00am -8:00pm</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                        </div>
-
-                   </div>
-                 </div>
-             </div>                
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3"> <!-- required for floating -->
+                     
+                                            <ul class="nav nav-pills nav-stacked flex-column" id="myTab" role="tablist">
                             
-    
-        <!--Modal End-->
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="description_l-tab" data-toggle="tab" href="#description_l" >Description</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="location_l-tab" data-toggle="tab" href="#location_l" role="tab" aria-controls="location_l" aria-selected="false">Location</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="ratings_l-tab" data-toggle="tab" href="#ratings_l" role="tab" aria-controls="ratings_l" aria-selected="false">Ratings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="availablity_l-tab" data-toggle="tab" href="#availablity_l" role="tab" aria-controls="availablity_l" aria-selected="false">Availability</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="timing_l-tab" data-toggle="tab" href="#timing_l" role="tab" aria-controls="timing_l" aria-selected="false">Timings</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="menu_l-tab" data-toggle="tab" href="#menu_l" role="tab" aria-controls="menu_l" aria-selected="false">Menu</a>
+                                                </li>
+                                            </ul>
+
+                                                                        
+                                        </div>
+                                        <div class="col-md-9" style="padding-left: 30px">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content" id="myTabContent">
+                                                    <div class="tab-pane fade show active" id="description_l" role="tabpanel" aria-labelledby="description_l-tab">
+                                                        Have a wholesome, proven perspective on Aksarben neighborhood's Breakfast & Lunch spot with long menu of straightforward American fare & coffee drinks.
+
+                                                    </div>
+                                           <div class="tab-pane fade" id="location_l" role="tabpanel" aria-labelledby="location_l-tab">
+                                                6920 Pacific St, Omaha, NE 68106</br>
+                                                    <div class="centered_button">
+                                                        <button type="button" class="btn btn-success" onclick=" window.open('https://goo.gl/maps/Ay58dsKiSm8vEDHr9', '_blank'); return false;">Get Directions</button>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="menu_l" role="tabpanel" aria-labelledby="menu_l-tab">
+                                                                       <div class="container-fluid" >
+                                                <div class="scrollbar scrollbar-primary" id="anyClass"> 
+                                               
+                                                <div class="row">
+                                                    <div class="col-md-5">Eggs Benedict</div>
+                                                    <div class="col-md-3">12 $</div>
+                                                    <div class="col-md-4"><img src="../img/eggs_benedict.jpg" alt="eggs_benedict" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">French Toast</div>
+                                                    <div class="col-md-3">9 $</div>
+                                                    <div class="col-md-4"><img src="../img/french_toast.jpg" alt="french_toast" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Sweety Pie</div>
+                                                    <div class="col-md-3">11 $</div>
+                                                    <div class="col-md-4"><img src="../img/sweet_pie.jpg" alt="sweet_pie" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                  <div class="row">
+                                                    <div class="col-md-5">Veggie Omelet</div>
+                                                    <div class="col-md-3">10 $</div>
+                                                    <div class="col-md-4"><img src="../img/veg_omelette.jpg" alt="veg_omelette" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Veggie Sammie</div>
+                                                    <div class="col-md-3">11 $</div>
+                                                    <div class="col-md-4"><img src="../img/veg_sammie.jpg" alt="veg_sammie" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Garden Salad</div>
+                                                    <div class="col-md-3">10 $</div>
+                                                    <div class="col-md-4"><img src="../img/garden_salad.jpg" alt="garden_salad" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">Cappuccino</div>
+                                                    <div class="col-md-3">5 $</div>
+                                                    <div class="col-md-4"><img src="../img/capp.jpg" alt="cappuccino" width="100%" height="50px" style="padding-top :5px"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            </div>
+                                          <div class="tab-pane fade" id="ratings_l" role="tabpanel" aria-labelledby="ratings_l-tab">
+                                                    <div>This restaurant is a widely popular restaurant.The ratings are:
+                                                        </div>
+                                                   <div class="ratings_star">Ratings:
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                      <span class="fa fa-star checked"></span>
+                                                    </div>
+                                          
+                                            </div>
+
+                                           <div class="tab-pane fade" id="availablity_l" role="tabpanel" aria-labelledby="availablity_l-tab">
+                                                Current seat availability is :
+                                                <span id="lepepp">
+                                                </span>
+                                            </div>
+                                            <div class="tab-pane fade" id="timing_l" role="tabpanel" aria-labelledby="timing_l-tab">
+                                                <p>Mon-Sun:11:00am to 2:00am</p>
+                                            </div>
+                                     
+                                </div>
+                                       
+                            </div>
+                            </div>
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+                       
+  
+  
              
                       
     <!-- Body End-->
 
 </div>
 
-    <!-- Footer Start-->
-       <div id="footer">
-        <h6>
-            <b>University of Nebraska at Omaha. CSCI 8700 Project. Team: The Reqruiters</b>
-        </h6>
-    </div>
-
-    <!-- Footer End-->
     <!-- Calling Google Maps API-->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHgljo-kiYmY52Cv3tOG3NEhFqjS8Zzhw&callback=initMap" onerror="googleError()" async defer></script>
 </body>
