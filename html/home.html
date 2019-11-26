@@ -31,12 +31,42 @@
 	}
 </script>
 <body>
-    <!-- Header Start-->
-    <div align="right" style="padding-right: 30px;color:blue"><a onclick="logout()" data-toggle="modal" data-target="#myModal">Logout</a></div>
 
-    <div class="col-md-12 text-center" style="padding-bottom: 10px"><h3>Aksarben Village Navigator</h3>
-        Welcome to AV Navigator.Hope you can enjoy your day at Aksarben Village.
+    <div class="container-fluid" id="header">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="../html/home.html">
+                <h2>AV Navigator</h2>
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/parking.html">Parking</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
+    <br>
+    <div id="redline" style="background-color: rgb(255, 0, 0);height: 5px"></div>
+    <!-- Header End-->
+
 
     <!-- Body Start-->
     <div id="mbody">
