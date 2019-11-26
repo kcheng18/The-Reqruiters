@@ -13,21 +13,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <title>AV Navigator - Sign Up</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Linked CSS and javaScript files -->
-    <link rel="stylesheet" type="text/css" href="css/pageOutlook.css" />
+    <link rel="stylesheet" type="text/css" href="../css/signup.css" />
 
 
-    <!-- Inline CSS -->
-    <style>
-        .carousel-inner img {
-            width: 100%;
-        }
-    </style>
 </head>
 
 <script>
@@ -57,57 +52,48 @@
 
 <body>
 
-    <!-- Header Start-->
-    <div class="container-fluid" id="header">
-        <div>
-            <div style="padding-top: 20px; text-align: center;">
-                <h2>AV Navigator</h2>
+
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Create Account</h3>            
             </div>
+        	   <div class="card-body text-center">
+        	   	<form>
+ 	               <div class="input-group form-group">
+ 	               	<div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user-edit"></i></span>
+                        </div>
+                        <input type="text" class="form-input" name="name" id="name" placeholder="Your Name">
+                    </div>
+                      <div class="input-group form-group">
+                      	<div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user-edit"></i></span>
+                        </div>
+                        <input type="email" class="form-input" name="userid" id="userid" placeholder="Your UserID">
+					</div>
+                     <div class="input-group form-group">
+                     	<div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-input" name="password" id="pwd" placeholder="Password">
+		             </div>
+                     <div class="input-group form-group">
+                     	<div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                  	    <input type="password" class="form-input" name="confirm_password" id="cpwd" placeholder="Confirm password">
+					</div>
+                    <div class="form-group">
+                        <input type="submit" value="SignUp" class="btn  login_btn" onclick="signup()">
+                    </div>
+                 </form>   
+            </div>
+           
         </div>
     </div>
-    <div id="header" style="background-color: rgb(255, 0, 0);height: 5px"></div>
-    <!-- Header End-->
-    <div style="height: 100px;"></div>
-    <!-- Body Start-->
-    <div style="height: 300px;">
-	    <div class="container-fluid" id="mbody">
-	    	<div id="demo"></div>
-			  <table align="center">
-			  	<tr>
-		          <td align="right">Name:</td>
-		          <td align="left"><input type="text"
-		              id="name"/></td>
-		        </tr>
-			  	<tr>
-		          <td align="right">User ID:</td>
-		          <td align="left"><input type="text"
-		              id="userid"/></td>
-		        </tr>
-		        <tr>
-		          <td align="right">Password:</td>
-		          <td align="left"><input type="password"
-		              id="pwd"/></td>
-		        </tr>
-		        <tr>
-		          <td align="right">Confirm Password:</td>
-		          <td align="left"><input type="password"
-		              id="cpwd"/></td>
-		        </tr>
-		        <td></td>  
-		        <td style="float:right;"><a href="login.html">Login</a> <button onclick="signup()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Sign Up</button></td>
-		      </table>
-	    </div>
-    </div>
-    <!-- Body End-->
-
-
-    <!-- Footer Start-->
-    <div id="footer">
-        <h6>
-            <b>University of Nebraska at Omaha. CSCI 8700 Project. Team: The Reqruiters</b>
-        </h6>
-    </div>
-    <!-- Footer End-->
+</div>
 
 </body>
 
