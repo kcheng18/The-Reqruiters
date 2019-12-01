@@ -35,29 +35,35 @@
 	function getIndex_type(select) {
 		if (select.value == "other"){	
 			document.getElementById("restOpt").className = 'hidden';
+			document.getElementById("restaurant").className = 'hidden';
 			document.getElementById("other1_label").className = '';
 			document.getElementById("other1").type = "text";
+			document.getElementById("other1").placeholder = "Which type...";
 		}
 		else if (select.value == "rest"){
+			
 			document.getElementById("other1_label").className = 'hidden'; 
 			document.getElementById("other1").type = "hidden";
 			document.getElementById("restOpt").className = '';
+			document.getElementById("restaurant").className = '';
 		}
 		else{
 			document.getElementById("restOpt").className = 'hidden'; 
 			document.getElementById("other1_label").className = 'hidden'; 
 			document.getElementById("other1").type = "hidden";
+			document.getElementById("restaurant").className = 'hidden';
 		}		
 	}
 	
 	function getIndex_rest(select) {
 		if (select.value == "other"){	
-			document.getElementById("other2_label").className = '';
-			document.getElementById("other2").type = "text";
+			document.getElementById("other1_label").className = '';
+			document.getElementById("other1").type = "text";
+			document.getElementById("other1").placeholder = "Restaurant Name...";
 		}
 		else{
-			document.getElementById("other2_label").className = 'hidden';
-			document.getElementById("other2").type = "hidden";
+			document.getElementById("other1_label").className = 'hidden';
+			document.getElementById("other1").type = "hidden";
 		}		
 	}
 	
@@ -151,8 +157,8 @@
 			    </select>
 
 			    <label id="restOpt" class="hidden" for="restaurant" >Which Restaurant</label>
-			    <select id="restaurant" name="restaurant" onchange="getIndex_rest(this)" required>
-			      		<option value=""></option>
+			    <select id="restaurant" class="hidden" name="restaurant" onchange="getIndex_rest(this)" required>
+			      		<option value="" id="restOpts"></option>
 					  	<option value="ngm">New Gold Mountain Restaurant</option>
 					  	<option value="dpat">Dudley's Pizza and Tavern</option>
 					  	<option value="vt">Voodoo Taco</option>
@@ -163,15 +169,13 @@
 			    </select>
 			    
 			    <label class="hidden" id="other1_label" for="other1">Other</label>
-			    <input type="hidden" id="other1" name="other1" placeholder="Which type..." required>
-			    
-			    <label class="hidden" id="other2_label" for="other2">Other</label>
-			    <input type="hidden" id="other2" name="other2" placeholder="Restaurant Name..." required>
-			    <br>
+			    <input type="hidden" id="other1" placeholder="" required>
 			
-			    <label for="subject">Subject</label>
-			    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-			    
+			   
+			    <p>
+			    	<label for="subject">Subject</label>
+			    	<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+			    </p>
 			    <div class="rate">
 				    <input type="radio" id="star5" name="rate" value="5" required/>
 				    <label for="star5" title="text">5 stars</label>
