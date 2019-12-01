@@ -56,6 +56,17 @@ outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
 
 }
+.wel_text{
+	text-align: center;
+	color: white;
+}
+a{
+	color: white;
+
+}
+a:hover{
+	color:#ffdb58;
+}
 
 .remember{
 color: white;
