@@ -48,9 +48,11 @@
 a:hover {
 cursor: pointer;
 text-decoration: underline;
+
 }
 a{
     color: white;
+    
 }
 
 .centered {
