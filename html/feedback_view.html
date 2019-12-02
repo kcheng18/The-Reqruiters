@@ -76,9 +76,14 @@
     <!--Form  Start-->
     <div style="height: 50px;"></div>
     <div style="height: 300px;">
-    	<p id="demo"></p> 
+    	<table>
+	    	<tr>
+	    		<td><font color="blue"><a onclick="filter(this)">Restaurant</a></font></td>
+	    		<td><font color="blue"><a onclick="filter(this)">Event</a></font></td> 
+	    		<td><font color="blue"><a onclick="filter(this)">Other</a></font></td>
+	    	</tr>
+    	</table>
     	<table id="myTable">
-		  
 		</table>
     </div>
 
@@ -98,6 +103,11 @@
 	}
 	function start(){
 		var xmlhttp = new XMLHttpRequest();
+		var filter = sessionStorage.getItem("filter");
+		var isfilter = false;
+    	if (filter != undefined){
+    		isfilter = true;
+    	}
 		xmlhttp.onreadystatechange = function() {
 		  if (this.readyState == 4 && this.status == 200) {
 		    var myObj = JSON.parse(this.responseText);
@@ -112,10 +122,17 @@
 					category += ": " + myObj.feedback[i].other;
 				}
 		    	var rating = myObj.feedback[i].rating;
-		    	insertR(date, subject, category, rating);
+		    	if(isfilter){
+		    		if (category.includes(filter)){
+		    			insertR(date, subject, category, rating);
+		    		}
+		    	}
+		    	else
+		    		insertR(date, subject, category, rating);
 		    }
-		    var obj = JSON.parse(sessionStorage.getItem("feedback"));
-		    if(obj != undefined){
+		    var check = sessionStorage.getItem("feedback");
+		    if(check != undefined){
+		    	var obj = JSON.parse(check);
 		    	var category = obj.category
 			    if(obj.category.includes("Restaurant")){
 			    	category += ": " + obj.restname;
@@ -123,14 +140,29 @@
 			    else if (obj.category == "Other"){
 					category += ": " + obj.other;
 				}
-			    insertR(obj.date, obj.subject, category, obj.rating);
+		    	if (filter != undefined && category.includes(filter)){
+		    		insertR(obj.date, obj.subject, category, obj.rating);
+		    	}
+		    	if(isfilter){
+		    		if (category.includes(filter)){
+		    			insertR(obj.date, obj.subject, category, obj.rating);
+		    		}
+		    	}
+		    	else
+		    		insertR(obj.date, obj.subject, category, obj.rating);
 		    }
 		    insertR("Date", "Subject", "Category", "Rating");
 		  }
 		};
 		xmlhttp.open("GET", "../json_demo.txt", true);
 		xmlhttp.send();
+		sessionStorage.removeItem("filter");
 	}
 	start();
+	function filter(type){
+		var temp = type.innerHTML;
+		sessionStorage.setItem("filter", temp);
+		location.reload();
+	}
 </script>
 </html>
