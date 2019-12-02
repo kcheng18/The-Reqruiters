@@ -36,9 +36,10 @@
     function checklogin(){
         var id = sessionStorage.getItem("userid");
         if (id != undefined){
-            alert("You've already login." + id)
+            alert("Welcome." + id)
             location.replace("./home.html")
         }
+ 
     }
     checklogin();
     function login(){
