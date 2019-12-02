@@ -71,7 +71,7 @@
 		var d = new Date();
 		var name = document.getElementById("name").value;
 		var subject = document.getElementById("subject").value;
-		 var rating = document.getElementsByName("rate");
+		var rating = document.getElementsByName("rate");
 		var rate = "";
 		for (i = 0; i < rating.length; i++) {
 		    if (rating[i].checked == true) {
@@ -84,7 +84,7 @@
 		var restaurant = r.options[r.selectedIndex].text;
 		var other = document.getElementById("other1").value;
 		var date = (d.getMonth()+1) + '-' + d.getDate() + '-' + d.getFullYear();
-		var temp = '{ "name":"' + name + '", "date":"' + date + '", "subject":"' + subject + '", "category":"' + type + '","rating":"' + rating + '"';
+		var temp = '{ "name":"' + name + '", "date":"' + date + '", "subject":"' + subject + '", "category":"' + type + '","rating":"' + rate + '"';
 		if (type == 'Restaurant'){
 			if (restaurant !== "Other"){
 				temp += ', "restname": "' + restaurant +'" }';
