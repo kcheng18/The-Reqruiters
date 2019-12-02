@@ -1,6 +1,6 @@
 # The-Reqruiters
 ## AV Navigator:
-AV Navigator aka Aksarben Village Navigator is an application developed for the community of Aksarben with features listing the events, restaurants, parking space availability, etc. aiming at a better and smart community.This application was developed using HTML,CSS and javascript.We have implemented the front end functionality of the application.
+AV Navigator aka Aksarben Village Navigator is an application developed for the community of Aksarben with features listing the events, restaurants, parking space availability, etc. aiming at a better and smart community.This application was developed using HTML,CSS and Javascript.We have implemented the front end functionality of the application.
 ### Homepage:
 It consists of links to the features with a sidebar consisting of upcoming events,any promotional offers available.
 ### Restaurants:
