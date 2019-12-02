@@ -67,36 +67,39 @@
 		}		
 	}
 	
-	function submit(){
+	function submit1(){
+		var d = new Date();
 		var name = document.getElementById("name").value;
 		var subject = document.getElementById("subject").value;
-		var rating = document.getElementByName("rate");
-		var other1 = document.getElementById("other1");
-		var other2 = document.getElementById("other2");
-		var rateCheck = "false"
-		for(var i = 0; i < rating.length; i++){
-			if (rating[i].checked == "true"){
-				rateCheck = "true";
+		 var rating = document.getElementsByName("rate");
+		var rate = "";
+		for (i = 0; i < rating.length; i++) {
+		    if (rating[i].checked == true) {
+		    	rate = rating[i].value;
+		    }
+		}
+		var e = document.getElementById("type");
+		var r = document.getElementById("restaurant");
+		var type = e.options[e.selectedIndex].text;
+		var restaurant = r.options[r.selectedIndex].text;
+		var other = document.getElementById("other1").value;
+		var date = (d.getMonth()+1) + '-' + d.getDate() + '-' + d.getFullYear();
+		var temp = '{ "name":"' + name + '", "date":"' + date + '", "subject":"' + subject + '", "category":"' + type + '","rating":"' + rating + '"';
+		if (type == 'Restaurant'){
+			if (restaurant !== "Other"){
+				temp += ', "restname": "' + restaurant +'" }';
 			}
-        }
-		
-		
-		if (name == ""){
-			alert("Please enter your name")
+			else
+				temp += ', "restname": "' + other +'" }';
 		}
-		else if (subject == ""){
-			alert("Please enter subject at the subject field")
-		}
-		else if (rateCheck == "false"){
-			alert("Please rate your feedback")
+		else if (type == 'Other'){
+			temp += ', "other": "' + other +'" }';
 		}
 		else{
-			alert("Thanks for your feedback. Have a good day.")
-			location.replace("../html/home.html")
+			temp += '}';
 		}
-		
+		sessionStorage.setItem("feedback", temp);
 	}
-	
 </script>
 <body>
 
@@ -104,7 +107,7 @@
     <div class="container-fluid" id="header">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="../html/home.html">
+            <a class="navbar-brand" href="../html/feedback_view.html">
                 <h2>AV Navigator</h2>
             </a>
 
@@ -143,7 +146,7 @@
     <div style="height: 50px;"></div>
     <div style="height: 300px;">
     	<div class="container">
-			  <form action="../html/home.html">
+			  <form action="../html/feedback_view.html" method=post onsubmit="submit1()">
 			
 			    <label for="name">Name</label>
 			    <input type="text" id="name" name="name" placeholder="Your name.." required>
@@ -191,7 +194,6 @@
   				<br>
 				
 			    <input type="submit" value="Submit" class="btn submit_btn">
-			
 			  </form>
 			</div>
     </div>
