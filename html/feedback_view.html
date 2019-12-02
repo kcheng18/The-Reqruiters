@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Bootstrap CDN for online application-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>AV Navigator</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Linked CSS and javaScript files -->
+    <link rel="stylesheet" type="text/css" href="../css/feedback_view.css" />
+
+
+    <!-- Inline CSS -->
+    <style>
+        .carousel-inner img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<!-- <body data-spy="scroll" data-target=".navbar" data-offset="50"> -->
+
+<body>
+
+    <!-- Header Start-->
+    <div class="container-fluid" id="header">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="../html/home.html">
+                <h2>AV Navigator</h2>
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/parking.html">Parking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/feedback_view.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <div id="redline" style="background-color: rgb(255, 0, 0);height: 5px"></div>
+    <!-- Header End-->
+
+    <!--Form  Start-->
+    <div style="height: 50px;"></div>
+    <div style="height: 300px;">
+    	<p id="demo"></p> 
+    	<table id="myTable">
+		  
+		</table>
+    </div>
+
+</body>
+<script>
+	function insertR(date, subject, category, rating){
+		var table = document.getElementById("myTable");
+		var row = table.insertRow(0);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		cell1.innerHTML = date;
+		cell2.innerHTML = subject;
+		cell3.innerHTML = category;
+		cell4.innerHTML = rating;
+	}
+	function start(){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+		    var myObj = JSON.parse(this.responseText);
+		    for(var i = 0; i < myObj.feedback.length; i++){
+		    	var date = myObj.feedback[i].date;
+		    	var subject = myObj.feedback[i].subject;
+		    	var category = myObj.feedback[i].category;
+		    	if (myObj.feedback[i].category.includes("Restaurant")){
+		    		category += ": " + myObj.feedback[i].restname;
+				}
+				else if (myObj.feedback[i].category == "Other"){
+					category += ": " + myObj.feedback[i].other;
+				}
+		    	var rating = myObj.feedback[i].rating;
+		    	insertR(date, subject, category, rating);
+		    }
+		    var obj = JSON.parse(sessionStorage.getItem("feedback"));
+		    if(obj != undefined){
+		    	var category = obj.category
+			    if(obj.category.includes("Restaurant")){
+			    	category += ": " + obj.restname;
+			    }
+			    else if (obj.category == "Other"){
+					category += ": " + obj.other;
+				}
+			    insertR(obj.date, obj.subject, category, obj.rating);
+		    }
+		    insertR("Date", "Subject", "Category", "Rating");
+		  }
+		};
+		xmlhttp.open("GET", "../json_demo.txt", true);
+		xmlhttp.send();
+	}
+	start();
+</script>
+</html>
