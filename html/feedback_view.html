@@ -12,7 +12,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <title>AV Navigator</title>
+    <title>AV Navigator - Feedback View</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -102,7 +102,7 @@
 		cell4.innerHTML = rating;
 	}
 	function start(){
-		var xmlhttp = new XMLHttpRequest();
+		/* var xmlhttp = new XMLHttpRequest();
 		var filter = sessionStorage.getItem("filter");
 		var isfilter = false;
     	if (filter != undefined){
@@ -155,7 +155,52 @@
 		  }
 		};
 		xmlhttp.open("GET", "../json_demo.txt", true);
-		xmlhttp.send();
+		xmlhttp.send(); */
+		var filter = sessionStorage.getItem("filter");
+		var isfilter = false;
+    	if (filter != undefined){
+    		isfilter = true;
+    	}
+		var json = '{ "feedback":[ {"name":"JJ Goodman", "date":"11-13-2019","subject":"It is good!!","category":"Restaurant","restname": "1234 Restaurant", "rating":4}, {"name":"faker1234", "date":"11-20-2019","subject":"It\'s not good","category":"Event","rating":1}, {"name":"uAreSuck1234","date":"11-25-2019","subject":"It\'s not bad","category":"Other","other":"environment", "rating":3}]}';
+		var myObj = JSON.parse(json);
+		for(var i = 0; i < myObj.feedback.length; i++){
+			var date = myObj.feedback[i].date;
+	    	var subject = myObj.feedback[i].subject;
+	    	var category = myObj.feedback[i].category;
+	    	if (myObj.feedback[i].category.includes("Restaurant")){
+	    		category += ": " + myObj.feedback[i].restname;
+			}
+			else if (myObj.feedback[i].category == "Other"){
+				category += ": " + myObj.feedback[i].other;
+			}
+	    	var rating = myObj.feedback[i].rating;
+	    	if(isfilter){
+	    		if (category.includes(filter)){
+	    			insertR(date, subject, category, rating);
+	    		}
+	    	}
+	    	else
+	    		insertR(date, subject, category, rating);
+		}
+		var check = sessionStorage.getItem("feedback");
+	    if(check != undefined){
+	    	var obj = JSON.parse(check);
+	    	var category = obj.category
+		    if(obj.category.includes("Restaurant")){
+		    	category += ": " + obj.restname;
+		    }
+		    else if (obj.category == "Other"){
+				category += ": " + obj.other;
+			}
+	    	if(isfilter){
+	    		if (category.includes(filter)){
+	    			insertR(obj.date, obj.subject, category, obj.rating);
+	    		}
+	    	}
+	    	else
+	    		insertR(obj.date, obj.subject, category, obj.rating);
+	    }
+	    insertR("Date", "Subject", "Category", "Rating");
 		sessionStorage.removeItem("filter");
 	}
 	start();
