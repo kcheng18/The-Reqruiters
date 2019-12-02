@@ -173,7 +173,7 @@
 			else if (myObj.feedback[i].category == "Other"){
 				category += ": " + myObj.feedback[i].other;
 			}
-	    	var rating = myObj.feedback[i].rating;
+	    	var rating = myObj.feedback[i].rating + "/5";
 	    	if(isfilter){
 	    		if (category.includes(filter)){
 	    			insertR(date, subject, category, rating);
@@ -194,7 +194,7 @@
 			}
 	    	if(isfilter){
 	    		if (category.includes(filter)){
-	    			insertR(obj.date, obj.subject, category, obj.rating);
+	    			insertR(obj.date, obj.subject, category, obj.rating+ "/5");
 	    		}
 	    	}
 	    	else
