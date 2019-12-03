@@ -132,33 +132,103 @@
     overflow-x: hidden;
 }
 
-#title {
-    font-size: xxx-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+/* animation */
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+    }
+    to {
+        text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px rgba(30, 132, 242, 1);
+    }
 }
 
-
-/* #concert {
-    font-size: xx-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
-
-#carousel-text {
-    color: rgb(21, 42, 226);
+#carousel-text1 {
+    /* color: rgb(49, 19, 218); */
     font-family: fantasy;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    font-size: large;
+}
+
+#carousel-text2 {
+    /* color: white; */
+    font-family: fantasy;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    font-size: large;
+}
+
+#carousel-text3 {
+    color: black;
+    font-family: fantasy;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    font-size: large;
+}
+
+#carousel-text1 a {
+    text-decoration: underline;
+}
+
+#carousel-text1 a:hover {
+    animation: neon .05s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+#carousel-text1 h2 {
+    animation: neon .05s ease-in-out infinite alternate;
+}
+
+#carousel-text2 a {
+    text-decoration: underline;
+}
+
+#carousel-text2 a:hover {
+    animation: neon .05s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+#carousel-text2 h2 {
+    animation: neon .05s ease-in-out infinite alternate;
+}
+
+#carousel-text3 a {
+    text-decoration: underline;
+}
+
+#carousel-text3 a:hover {
+    animation: neon .05s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+#carousel-text3 h2 {
+    animation: neon .05s ease-in-out infinite alternate;
 }
 
 
 /* Centered text */
 
-.centered {
+.centered1 {
     position: absolute;
+    font-size: xxx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#footer {
+.centered2 {
+    position: absolute;
+    font-size: 200%;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* #footer {
     background-color: black;
     display: flex;
     align-items: center;
@@ -167,4 +237,4 @@
     text-align: center;
     color: white;
     font-family: Georgia;
-}
+} */

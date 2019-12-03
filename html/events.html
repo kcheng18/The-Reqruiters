@@ -21,6 +21,12 @@
     <!-- Linked CSS and javaScript files -->
     <link rel="stylesheet" type="text/css" href="../css/events.css" />
 
+    <script>
+        function logout() {
+            sessionStorage.removeItem("userid");
+            window.location = "./login.html";
+        }
+    </script>
 
     <!-- Inline CSS -->
     <style>
@@ -62,6 +68,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../html/parking.html">Parking</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/feedback.html">Feedback</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/login.html" onclick="logout()">Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -71,9 +85,10 @@
     <!-- Header End-->
 
     <!-- Event Title Start-->
-    <div class="container-fluid" id="title">
+    <div class="container-fluid">
         <img src="../img/Events4.jpg" alt="Los Angeles" height="400" id="img">
-        <div class="centered">Events</div>
+        <div class="centered1" id="title">EVENTS</div>
+        <div class="centered2" id="subtitle">Get to know the events happening near <br>Aksarben area.</div>
     </div>
     <!-- Event Title End-->
 
@@ -92,20 +107,34 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active" id="concert">
-                    <img src="../img/tw_re.jpg" alt="Concert" width="1100" height="550">
-                    <div class="carousel-caption" id="carousel-text">
+                    <img src="../img/tw_re.jpg" alt="Concert" width="1100" height="560">
+                    <div class="carousel-caption" id="carousel-text1">
                         <h2>Taylor Swift Concert</h2>
                         <p>
                             <h4>Book your tickets for the reputation tour
-                                <a data-toggle="modal" data-target="#myModal">HERE</a>.</h4>
+                                <a data-toggle="modal" data-target="#tsModal">HERE</a></h4>
                         </p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/Baymax.jpg" alt="Community Event" width="1100" height="550">
+                    <img src="../img/berkshirehathaway.jpg" alt="Finance Event" width="1100" height="560">
+                    <div class="carousel-caption" id="carousel-text2">
+                        <h2>Berkshire Hathaway 2020</h2>
+                        <p>
+                            <h4>Get your credentials for the most anticipated Annual Shareholders Meeting
+                                <a data-toggle="modal" data-target="#bhModal">HERE</a></h4>
+                        </p>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/Baymax.jpg" alt="Enjoyable Sunday" width="1100" height="550">
+                    <img src="../img/20181002_HKY_Teamphoto_14184.jpg" alt="Enjoyable Sunday" width="1100" height="560">
+                    <div class="carousel-caption" id="carousel-text3">
+                        <h2>Men's Hockey</h2>
+                        <p>
+                            <h4>Huskers are going to the Nationals. Show your spirit by booking your tickets to the game
+                                <a data-toggle="modal" data-target="#">HERE</a></h4>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -121,9 +150,9 @@
     </div>
     <!--Corousal  End-->
 
-    <!-- The Modal Start -->
+    <!-- The TS Modal Start -->
 
-    <div class="modal fade" id="myModal">
+    <div class="modal fade" id="tsModal" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
 
@@ -146,14 +175,17 @@
                         November 21 of the same year. The tour grossed $345.7 million, being the second highest-grossing concert tour of the year and the highest-grossing tour of all time in the United States. A concert film based on the tour was released
                         on Netflix on December 31, 2018.</p>
                     <h4>Location</h4>
-                    <p>6464 Center St #120, Omaha, NE 68106</p>
+                    <p>Stinson Park, 2285 S 67th St, Omaha, NE 68106</p>
                     <h4>Timing</h4>
                     <p>4pm onwards</p>
+                    <h4>Price</h4>
+                    <p>$250 for Adults</p>
+                    <p>$100 for Children under the age 12</p>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" type="button" class="btn btn-primary" onclick="location.href='http://www.google.com/maps'">Get Directions</button>
+                    <button type="button" type="button" class="btn btn-primary" onclick="window.open('https://goo.gl/maps/7JYEVSekpxqGGEdaA', '_blank'); return false;">Get Directions</button>
                     <a class="btn btn-success" href="../html/parking.html" role="button">Get Parking Availability</a>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
@@ -162,8 +194,51 @@
         </div>
     </div>
 
-    <!-- The Modal End -->
+    <!-- The TS Modal End -->
 
+
+    <!-- The BH Modal Start -->
+
+    <div class="modal fade" id="bhModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Berkshire Hathaway (Omaha)</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3>Description</h3>
+                    <p>Berkshire Hathaway’s annual meeting provides a way to learn from the world’s most respected investor, Warren Buffett. The gathering is also an excellent opportunity to network with other shareholders of the company. Here is a guide
+                        for anyone who is considering attending the upcoming Berkshire shareholder’s meeting.</p>
+                    <p>Berkshire's official meeting gets underway in Omaha on Saturday, May 4. But the Berkshire-palooza experience goes beyond merely sitting in an arena and listening to Buffett and co-chairman Charlie Munger riff on the latest goings-on
+                        with the company, the stock market, the global economy, and even popular culture. It's a multiday event that gives anyone who attends a new perspective on just how large the Berkshire empire has become and what it means to the
+                        company's shareholders.</p>
+                    <p>For the most part, and as the name implies, Berkshire’s annual shareholder meeting is for the company’s shareholders. The primary purpose of the gathering is to give shareholders an overview of Berkshire’s performance during the last
+                        year. It also gives everyone a chance to learn the company's plans for going forward. Both investors and the media can pose important questions about the company to the management team.</p>
+                    <h4>Location</h4>
+                    <p>CHI Health Center Omaha<br> 455 N 10th St, Downtown Omaha, NE 68102</p>
+                    <h4>Timing</h4>
+                    <p>11pm - 6pm</p>
+                    <h4>Note</h4>
+                    <p>Proof of ownership and photo identification is required before credentials will be issued.</p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" type="button" class="btn btn-primary" onclick="window.open('https://goo.gl/maps/3mj1ELYchsJnPLeW8', '_blank'); return false;">Get Directions</button>
+                    <a class="btn btn-success" href="../html/parking.html" role="button">Get Parking Availability</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- The BH Modal End -->
 
 </body>
 
